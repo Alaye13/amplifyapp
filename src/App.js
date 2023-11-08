@@ -1,18 +1,29 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import Card from './Card';
-import logo from './logo.svg';
+import Contact from './Contact';
+import Home from './Home';
 import './App.css';
 
 function App() {
+
+  // Determine whether to show the "Home" content
+
   return (
     <div className="App">
-      <NavBar/>
-      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', paddingTop: '70px' }}>
-        <Card color="red" />
-        <Card color="blue" />
-        <Card color="green" />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<NavBar />} />
+          <Route path="NavBar" element={<NavBar />} />
+          <Route path="Contact" element={<Contact />} />
+          <Route path="Card" element={<Card />} />
+          <Route path="Home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+
+
+      {/* The rest of your components and content */}
     </div>
   );
 }

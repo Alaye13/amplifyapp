@@ -11,14 +11,17 @@ function App() {
   // Determine whether to show the "Home" content
 
   return (
+
+    
     <div className="App">
       <BrowserRouter>
+      <NavBar />
         <Routes>
-          <Route path="/" element={<NavBar />} />
+          <Route path="/" element={<Home />} />
           <Route path="NavBar" element={<NavBar />} />
-          <Route path="Contact" element={<Contact />} />
-          <Route path="Card" element={<Card />} />
-          <Route path="Home" element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="card" element={<Card />} />
+          <Route path="home" element={<Home />} />
         </Routes>
       </BrowserRouter>
 
